@@ -32,7 +32,7 @@ def couleur_rgba(couleur_nom, alpha=255):
 
 # Liste des images pour défilement
 def lister_images(image_folder):
-    return [f for f in os.listdir(image_folder) if f.lower().endswith(('png', 'jpg', 'jpeg'))] if os.path.isdir(image_folder) else []
+    return [f for f in os.listdir(image_folder) if f.lower().endswith(('png', 'jpg', 'jpeg')) and not f.startswith('._') and not f.startswith('.')] if os.path.isdir(image_folder) else []
 
 # Création des photos annotées (images avec annotations)
 def dessiner_annotations_sur_images(image_folder):
