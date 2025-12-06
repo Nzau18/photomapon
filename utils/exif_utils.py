@@ -77,7 +77,7 @@ def extraire_et_sauvegarder_exif(image_folder, exif_output_file, reset=False):
         return {}  # Charger directement le fichier JSON
     else:
         # Si le fichier n'existe pas, extraire les EXIF depuis les images et les sauvegarder
-        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('png', 'jpg', 'jpeg'))]
+        image_files = [f for f in os.listdir(image_folder) if f.lower().endswith(('png', 'jpg', 'jpeg')) and not f.startswith('._') and not f.startswith('.')]
         exif_data = {}
 
         for image_name in image_files:
